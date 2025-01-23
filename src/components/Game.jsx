@@ -37,7 +37,7 @@ function Game() {
         }
         else{
             bullet.current.style.top = `${488}px`;
-            clearInterval(shtmve);
+            clearInterval(shtmve)
         }
     }
    
