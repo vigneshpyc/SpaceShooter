@@ -28,18 +28,18 @@ function Game() {
     let shtmve;
     const shoot = ()=>{
         shtmve = setInterval(bulletmove,100);
+
     }
     const bulletmove = ()=>{
         var bulletPos = bullet.current.getBoundingClientRect().top;
-        const dup = bulletPos;
-        if(bulletPos!==126.4000015258789){
-            bullet.current.style.top = `${bulletPos-10}px` 
+        if(bulletPos!==128){
+            bullet.current.style.top = `${bulletPos-20}px` 
+            
                 
         }
         else{
+            bullet.current.style.top = `${488}px`;
             clearInterval(shtmve);
-            bullet.current.style.top = `${666.4000244140625}px`
-
         }
     }
    
