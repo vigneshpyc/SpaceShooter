@@ -37,7 +37,7 @@ function Game() {
                 
         }
         else{
-            clearInterval(shtmve)
+            clearInterval(shtmve);
             bullet.current.style.top = `${666.4000244140625}px`
 
         }
@@ -48,20 +48,20 @@ function Game() {
    <div className="main">
     <div className="score">
         <div className="scboard">
-            <img src="../src/assets/skull.png" alt="Somoe Technical Error" />
+            <img src="/assets/skull.png" alt="Somoe Technical Error" />
             <h1>Kill Rate : 158</h1>
         </div>
         <button className='start' onClick={start}>Start</button>
     </div>
     <div className="ground">
-        <img src="../src/assets/monster.png" alt="Some Technical error" ref={monster}
+        <img src="/assets/monster.png" alt="Some Technical error" ref={monster}
         style={{
             position:'absolute',
             top:150,
             left:Math.floor(Math.random()*(window.innerWidth-100))
         }}
         />
-        <img src="../src/assets/spcship.png" alt="Some Technical Error"
+        <img src="/assets/spcship.png" alt="Some Technical Error"
         style={{
             position:'absolute',
             bottom:150,
@@ -70,7 +70,7 @@ function Game() {
             zIndex:1
         }}
         />
-        <img src="../src/assets/bullet.png" ref={bullet} alt="Some Technical Error"
+        <img src="/assets/bullet.png" ref={bullet} alt="Some Technical Error"
         style={{
             position:'absolute',
             bottom:150,
@@ -81,7 +81,7 @@ function Game() {
         />
     </div>
     <div className="footer">
-        <img className='shooter' onClick={shoot} src="../src/assets/shooter.png" alt="Some Technical Error" />
+        <img className='shooter' onClick={shoot} src="/assets/shooter.png" alt="Some Technical Error" />
         <div className='controls'>
             <i className='lefticon fa-solid fa-arrow-left'></i>
             <i className='righticon fa-solid fa-arrow-right'></i>
