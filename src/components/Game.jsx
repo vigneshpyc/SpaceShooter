@@ -7,7 +7,6 @@ function Game() {
     const monster = useRef('');
     const bullet = useRef('');
 
-
     const monsterMove = ()=>{
         var top  = monster.current.getBoundingClientRect().top;
         if(top!==500){
@@ -30,17 +29,18 @@ function Game() {
         shtmve = setInterval(bulletmove,100);
 
     }
+
     const bulletmove = ()=>{
         var bulletPos = bullet.current.getBoundingClientRect().top;
-        if(bulletPos!==128){
-            bullet.current.style.top = `${bulletPos-20}px` 
+        if(bulletPos>=0){
+            bullet.current.style.top = `${bulletPos-20}px`
+            console.log(bulletPos);
         }
         else{
-            bullet.current.style.top = `${488}px`;
-            clearInterval(shtmve)
+            clearInterval(shtmve);
+            bullet.current.style.top = `${window.innerHeight-200}px`
         }
     }
-   
   return (
    <>
    <div className="main">
