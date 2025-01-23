@@ -6,6 +6,7 @@ function Game() {
 
     const monster = useRef('');
     const bullet = useRef('');
+    const spcship = useRef('');
 
     const monsterMove = ()=>{
         var top  = monster.current.getBoundingClientRect().top;
@@ -17,7 +18,6 @@ function Game() {
             monster.current.style.top = `${150}px`
             monster.current.style.left = `${Math.floor(Math.random()*(window.innerWidth-100))}px`
             monster.current.style.display = 'block'
-            
         }
         
     }
@@ -41,6 +41,18 @@ function Game() {
             bullet.current.style.top = `${window.innerHeight-200}px`
         }
     }
+    const shipLeftMve = ()=>{
+        var shipPos = spcship.current.getBoundingClientRect().left;
+        var bulPos = bullet.current.getBoundingClientRect().left;
+        spcship.current.style.left = `${shipPos-20}px`
+        bullet.current.style.left = `${bulPos-20}px`
+    }
+    const shipRightMve = ()=>{
+        var shipPos = spcship.current.getBoundingClientRect().left;
+        var bulPos = bullet.current.getBoundingClientRect().left;
+        spcship.current.style.left = `${shipPos+20}px`
+        bullet.current.style.left = `${bulPos+20}px`
+    }
   return (
    <>
    <div className="main">
@@ -59,7 +71,7 @@ function Game() {
             left:Math.floor(Math.random()*(window.innerWidth-100))
         }}
         />
-        <img src="/assets/spcship.png" alt="Some Technical Error"
+        <img src="/assets/spcship.png" ref={spcship} alt="Some Technical Error"
         style={{
             position:'absolute',
             bottom:150,
@@ -81,8 +93,8 @@ function Game() {
     <div className="footer">
         <img className='shooter' onClick={shoot} src="/assets/shooter.png" alt="Some Technical Error" />
         <div className='controls'>
-            <i className='lefticon fa-solid fa-arrow-left'></i>
-            <i className='righticon fa-solid fa-arrow-right'></i>
+            <i className='lefticon fa-solid fa-arrow-left' onClick={shipLeftMve}></i>
+            <i className='righticon fa-solid fa-arrow-right' onClick={shipRightMve}></i>
         </div>
     </div>
    </div>
