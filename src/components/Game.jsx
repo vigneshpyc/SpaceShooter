@@ -48,8 +48,8 @@ function Game() {
         bullet.current.style.left = `${bulPos-20}px`
     }
     const shipRightMve = ()=>{
-        var shipPos = spcship.current.getBoundingClientRect().left;
-        var bulPos = bullet.current.getBoundingClientRect().left;
+        var shipPos = spcship.current.getBoundingClientRect().left
+        var bulPos = bullet.current.getBoundingClientRect().left
         spcship.current.style.left = `${shipPos+20}px`
         bullet.current.style.left = `${bulPos+20}px`
     }
