@@ -34,8 +34,6 @@ function Game() {
         var bulletPos = bullet.current.getBoundingClientRect().top;
         if(bulletPos!==128){
             bullet.current.style.top = `${bulletPos-20}px` 
-            
-                
         }
         else{
             bullet.current.style.top = `${488}px`;
